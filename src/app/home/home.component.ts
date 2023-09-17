@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Arma} from "../model/arma";
 import {Personagem} from "../model/personagem";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-home',
@@ -10,105 +10,89 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 
 export class HomeComponent {
-  armas: Arma[] = [
-    {nome: "Rifle", carga: 2, custo: 35, dano: "2d6", municao: 8, rotulo: "preciso"},
-    {nome: "Rifle", carga: 2, custo: 35, dano: "2d6", municao: 8, rotulo: "preciso"}
-  ]
+  meuPersonagem: Personagem;
+  armas: Arma[] = []
 
-  meuPersonagem: Personagem = {};
-
-  origem = ""
-  arquetipo = ""
-  profissao = ""
-  nivel = 0
-  residencia = ""
-  personalidade = ""
-  motivacao = ""
-  idade = 0
-  sexo = ""
-  peso = 0
-  altura = 0
-  experiencia = 0
-  defesa = 0
-  stress = 0
-  saude = 0
-  vigor = 0
-  proficiencia = 0
-  determinacao = 0
-  moralidade = 0
-  conhecimentos = ""
-  equipamento = ""
-  dinheiro = 0
-  ouro = 0
-
-  cargaLeve = 0
-  cargaMedia = 0
-  cargaPesada = 0
-  cargaMaxima = 0
-  corpo = 0
-  agilidade = 0
-  astucia = 0
-  presenca = 0
-  fortitude = 0
-  reflexos = 0
-  iniciativa = 0
-  vontade = 0
-
+  armaForm: FormGroup
 
   constructor() {
-
+    this.meuPersonagem = {
+      nome: "",
+      origem: "",
+      arquetipo: "",
+      profissao: "",
+      nivel: 0,
+      residencia: "",
+      personalidade: "",
+      motivacao: "",
+      idade: 0,
+      sexo: "",
+      peso: 0,
+      experiencia: 0,
+      defesa: 0,
+      altura: 0,
+      stress: 0,
+      saude: 0,
+      vigor: 0,
+      proficiencia: 0,
+      determinacao: 0,
+      moralidade: 0,
+      conhecimentos: "",
+      equipamento: "",
+      dinheiro: 0,
+      ouro: 0,
+      corpo: 0,
+      agilidade: 0,
+      astucia: 0,
+      presenca: 0,
+      fortitude: 0,
+      reflexos: 0,
+      iniciativa: 0,
+      vontade: 0,
+      cargaLeve: 0,
+      cargaMedia: 0,
+      cargaPesada: 0,
+      cargaMaxima: 0,
+      armas: []
+    }
+    this.armaForm = new FormGroup({
+      "id": new FormControl(null),
+      "carga": new FormControl(0,),
+      "arma": new FormControl(null),
+      "ammo": new FormControl(0),
+      "dano": new FormControl(null),
+      "custo": new FormControl(0),
+      "rotulo": new FormControl(null),
+    })
   }
 
   ngOnInit() {
+    let personagemGuardado = JSON.parse(localStorage.getItem("personagem") || '{}')
 
+    this.meuPersonagem = Object.assign(this.meuPersonagem, personagemGuardado)
+    if (personagemGuardado.armas){
+      this.armas = personagemGuardado.armas
+    }
   }
 
-  saveChanges() {
-    this.meuPersonagem = {
-      origem: this.origem,
-      arquetipo: this.arquetipo,
-      profissao: this.profissao,
-      nivel: this.nivel,
-      residencia: this.residencia,
-      personalidade: this.personalidade,
-      motivacao: this.motivacao,
-      idade: this.idade,
-      sexo: this.sexo,
-      peso: this.peso,
-      experiencia: this.experiencia,
-      defesa: this.defesa,
-      altura: this.altura,
-      stress: this.stress,
-      saude: this.saude,
-      vigor: this.vigor,
-      proficiencia: this.proficiencia,
-      determinacao: this.determinacao,
-      moralidade: this.moralidade,
-      conhecimentos: this.conhecimentos,
-      equipamento: this.equipamento,
-      dinheiro: this.dinheiro,
-      ouro: this.ouro,
-      atributos:{
-        corpo: this.corpo,
-        agilidade: this.agilidade,
-        astucia: this.astucia,
-        presenca: this.presenca,
-      },
-      salvaguardas:{
-        fortitude: this.fortitude,
-        reflexos: this.reflexos,
-        iniciativa: this.iniciativa,
-        vontade: this.vontade,
-      },
-      carga:{
-        cargaLeve: this.cargaLeve,
-        cargaMedia: this.cargaMedia,
-        cargaPesada: this.cargaPesada,
-        cargaMaxima: this.cargaMaxima,
-      },
-      armas: this.armas
-    }
-    console.log(this.meuPersonagem)
+  ngDoCheck() {
+    localStorage.setItem("personagem", JSON.stringify(this.meuPersonagem))
+  }
+
+  salvarArma() {
+    this.meuPersonagem.armas!.push({
+      carga: this.armaForm.value.carga,
+      nome: this.armaForm.value.arma,
+      municao: this.armaForm.value.ammo,
+      dano: this.armaForm.value.dano,
+      custo: this.armaForm.value.custo,
+      rotulo: this.armaForm.value.rotulo,
+    })
+    this.armas = this.meuPersonagem.armas!
+  }
+
+  excluirArma(id: number){
+    this.meuPersonagem.armas?.splice(id, 1)
   }
 }
 

@@ -5,57 +5,57 @@
   <section class="w3-panel w3-section">
     <div class="w3-padding-small w3-cell w3-mobile">
       <label for="nome" class="w3-block w3-bold">Nome do Personagem</label>
-      <input id="nome" type="text" class="w3-input" style="width: 18rem">
+      <input id="nome" type="text" class="w3-input" style="width: 18rem" [(ngModel)]="meuPersonagem.nome">
     </div>
   </section>
   <section class="w3-panel w3-cell-row w3-section">
     <div class="w3-padding-small w3-cell ">
       <label for="origem" class="w3-block w3-bold">Origem</label>
-      <input id="origem" type="text" class="w3-input" [(ngModel)]="origem" (keyup)="saveChanges()">
+      <input id="origem" type="text" class="w3-input" [(ngModel)]="meuPersonagem['origem']">
     </div>
     <div class="w3-padding-small w3-cell ">
       <label for="arquetipo" class="w3-block w3-bold">Arquétipo</label>
-      <input id="arquetipo" type="text" class="w3-input" [(ngModel)]="arquetipo" (keyup)="saveChanges()">
+      <input id="arquetipo" type="text" class="w3-input" [(ngModel)]="meuPersonagem['arquetipo']">
     </div>
     <div class="w3-padding-small w3-cell ">
       <label for="profissao" class="w3-block w3-bold">Profissão</label>
-      <input id="profissao" type="text" class="w3-input" [(ngModel)]="profissao" (keyup)="saveChanges()">
+      <input id="profissao" type="text" class="w3-input" [(ngModel)]="meuPersonagem['profissao']">
     </div>
     <div class="w3-padding-small w3-cell" style="width: 100px">
       <label for="nivel" class="w3-block w3-bold">Nivel</label>
-      <input id="nivel" type="number" class="w3-input" [(ngModel)]="nivel" (keyup)="saveChanges()">
+      <input id="nivel" type="number" class="w3-input" [(ngModel)]="meuPersonagem['nivel']">
     </div>
     <div class="w3-padding-small w3-cell" style="">
       <label for="residencia" class="w3-block w3-bold">Residência</label>
-      <input id="residencia" type="text" class="w3-input" [(ngModel)]="residencia"
-             (keyup)="saveChanges()">
+      <input id="residencia" type="text" class="w3-input" [(ngModel)]="meuPersonagem['residencia']"
+      >
     </div>
   </section>
   <section class="w3-panel w3-section">
     <div class="w3-padding-small w3-cell w3-mobile">
       <label for="personalidade" class="w3-block w3-bold">Personalidade</label>
-      <input id="personalidade" type="text" class="w3-input" [(ngModel)]="personalidade"
-             (keyup)="saveChanges()">
+      <input id="personalidade" type="text" class="w3-input" [(ngModel)]="meuPersonagem['personalidade']"
+      >
     </div>
     <div class="w3-padding-small w3-cell w3-mobile">
       <label for="motivacao" class="w3-block w3-bold">Motivação</label>
-      <input id="motivacao" type="text" class="w3-input" [(ngModel)]="motivacao" (keyup)="saveChanges()">
+      <input id="motivacao" type="text" class="w3-input" [(ngModel)]="meuPersonagem['motivacao']">
     </div>
     <div class="w3-padding-small w3-cell" style="width: 100px;">
       <label for="idade" class="w3-block w3-bold">Idade</label>
-      <input id="idade" type="number" class="w3-input" [(ngModel)]="idade" (keyup)="saveChanges()">
+      <input id="idade" type="number" class="w3-input" [(ngModel)]="meuPersonagem['idade']">
     </div>
     <div class="w3-padding-small w3-cell" style="width: 100px;">
       <label for="sexo" class="w3-block w3-bold">Sexo</label>
-      <input id="sexo" type="text" class="w3-input" [(ngModel)]="sexo" (keyup)="saveChanges()">
+      <input id="sexo" type="text" class="w3-input" [(ngModel)]="meuPersonagem['sexo']">
     </div>
     <div class="w3-padding-small w3-cell" style="width: 100px;">
       <label for="peso" class="w3-block w3-bold">Peso</label>
-      <input id="peso" type="number" class="w3-input" [(ngModel)]="peso" (keyup)="saveChanges()">
+      <input id="peso" type="number" class="w3-input" [(ngModel)]="meuPersonagem['peso']">
     </div>
     <div class="w3-padding-small w3-cell" style="width: 100px;">
       <label for="altura" class="w3-block w3-bold">Altura</label>
-      <input id="altura" type="number" class="w3-input" [(ngModel)]="altura" (keyup)="saveChanges()">
+      <input id="altura" type="number" class="w3-input" [(ngModel)]="meuPersonagem['altura']">
     </div>
   </section>
   <hr>
@@ -64,28 +64,28 @@
       <div class="w3-row">
         <div class="w3-col s6 m6 w3-center">
           <h3 class=""><strong>Cor: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="corpo" (keyup)="saveChanges()">
+                                                    [(ngModel)]="meuPersonagem['corpo']">
           </h3>
           <span class="w3-tag">Corpo</span>
         </div>
         <div class="w3-col s6 m6 w3-center">
           <h3 class=""><strong>Agi: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="agilidade"
-                                                    (keyup)="saveChanges()"></h3>
+                                                    [(ngModel)]="meuPersonagem['agilidade']"
+          ></h3>
           <span class="w3-tag">Agilidade</span>
         </div>
       </div>
       <div class="w3-row">
         <div class="w3-col s6 m6 w3-center">
           <h3 class=""><strong>Ast: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="astucia"
-                                                    (keyup)="saveChanges()"></h3>
+                                                    [(ngModel)]="meuPersonagem['astucia']"
+          ></h3>
           <span class="w3-tag">Astúcia</span>
         </div>
         <div class="w3-col s6 m6 w3-center">
           <h3 class=""><strong>Pre: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="presenca"
-                                                    (keyup)="saveChanges()"></h3>
+                                                    [(ngModel)]="meuPersonagem['presenca']"
+          ></h3>
           <span class="w3-tag">Presença</span>
         </div>
       </div>
@@ -94,26 +94,26 @@
         <h5 class="w3-padding-small" style="margin: 0"><b>Salvaguardas</b></h5>
         <div class="w3-col s6 w3-center w3-padding">
           <p class="w3-small"><strong>Fortitude: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                                 [(ngModel)]="fortitude"
-                                                                 (keyup)="saveChanges()">
+                                                                 [(ngModel)]="meuPersonagem['fortitude']"
+          >
           </p>
         </div>
         <div class="w3-col s6 w3-center w3-padding">
           <p class="w3-small"><strong>Reflexos: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                                [(ngModel)]="reflexos"
-                                                                (keyup)="saveChanges()">
+                                                                [(ngModel)]="meuPersonagem['reflexos']"
+          >
           </p>
         </div>
         <div class="w3-col s6 w3-center w3-padding">
           <p class="w3-small"><strong>Iniciativa: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                                  [(ngModel)]="iniciativa"
-                                                                  (keyup)="saveChanges()">
+                                                                  [(ngModel)]="meuPersonagem['iniciativa']"
+          >
           </p>
         </div>
         <div class="w3-col s6 w3-center w3-padding">
           <p class="w3-small"><strong>Vontade: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                               [(ngModel)]="vontade"
-                                                               (keyup)="saveChanges()">
+                                                               [(ngModel)]="meuPersonagem['vontade']"
+          >
           </p>
         </div>
       </div>
@@ -122,76 +122,78 @@
       <div class="w3-row w3-center">
         <div class="w3-col s12">
           <h6><b>Vigor: </b><input class="w3-border-0" type="number" style="width: 40px"
-                                   [(ngModel)]="vigor"
-                                   (keyup)="saveChanges()"></h6>
+                                   [(ngModel)]="meuPersonagem['vigor']"
+          ></h6>
         </div>
         <div class="w3-col s6">
           <h6><b>Saúde: </b><input class="w3-border-0" type="number" style="width: 40px"
-                                   [(ngModel)]="saude"
-                                   (keyup)="saveChanges()"></h6>
+                                   [(ngModel)]="meuPersonagem['saude']"
+          ></h6>
         </div>
         <div class="w3-col s6">
           <h6><b>Stress: </b><input class="w3-border-0" type="number" style="width: 40px"
-                                    [(ngModel)]="stress"
-                                    (keyup)="saveChanges()"></h6>
+                                    [value]="meuPersonagem['stress']"
+                                    [(ngModel)]="meuPersonagem['stress']"
+          ></h6>
         </div>
       </div>
       <div class="w3-row w3-center">
         <div class="w3-col s6">
           <h6><strong>Defesa: </strong><input class="w3-border-0" type="number" style="width: 40px"
-                                              [(ngModel)]="defesa"
-                                              (change)="saveChanges()"></h6>
+                                              [(ngModel)]="meuPersonagem['defesa']"></h6>
         </div>
         <div class="w3-col s6">
           <h6><strong>Proficiência: </strong><input class="w3-border-0" type="number" style="width: 40px"
-                                                    [(ngModel)]="proficiencia" (keyup)="saveChanges()">
+                                                    [(ngModel)]="meuPersonagem['proficiencia']">
           </h6>
         </div>
       </div>
       <hr>
       <div class="w3-row w3-center">
-        <h6 class="w3-left-align w3-container"><b>Carga</b> (Total: )</h6>
+        <h6 class="w3-left-align w3-container"><b>Carga</b>
+          (Total: {{ (meuPersonagem['cargaLeve']! + meuPersonagem['cargaMedia']! + meuPersonagem['cargaPesada']! + meuPersonagem['cargaMaxima']!) || 0}}
+          )</h6>
         <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="cargaLeve"
-                                                       (keyup)="saveChanges()"><span class="">Leve</span></div>
+                                                       [(ngModel)]="meuPersonagem['cargaLeve']"
+        ><span class="">Leve</span></div>
         <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="cargaMedia"
-                                                       (keyup)="saveChanges()"><span class="">Média</span></div>
+                                                       [(ngModel)]="meuPersonagem['cargaMedia']"
+        ><span class="">Média</span></div>
         <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="cargaPesada"
-                                                       (keyup)="saveChanges()"><span class="">Pesada</span></div>
+                                                       [(ngModel)]="meuPersonagem['cargaPesada']"
+        ><span class="">Pesada</span></div>
         <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="cargaMaxima"
-                                                       (keyup)="saveChanges()"><span class="">Máxima</span></div>
+                                                       [(ngModel)]="meuPersonagem['cargaMaxima']"
+        ><span class="">Máxima</span></div>
       </div>
     </section>
     <section class="w3-third w3-padding-small w3-section">
       <div class="w3-row">
         <div class="w3-col s4 m12 w3-center">
           <h6><strong>Experiência: </strong><input class="w3-border-0" type="number" style="width: 60px"
-                                                   [(ngModel)]="experiencia" (keyup)="saveChanges()"></h6>
+                                                   [(ngModel)]="meuPersonagem['experiencia']"></h6>
         </div>
         <div class="w3-col s4 m12 w3-center">
           <h6><strong>Determinação: </strong><input class="w3-border-0" type="number" style="width: 60px"
-                                                    [(ngModel)]="determinacao" (keyup)="saveChanges()">
+                                                    [(ngModel)]="meuPersonagem['determinacao']">
           </h6>
         </div>
         <div class="w3-col s4 m12 w3-center">
           <h6><strong>Moralidade: </strong><input class="w3-border-0" type="number" style="width: 60px"
-                                                  [(ngModel)]="moralidade" (keyup)="saveChanges()"></h6>
+                                                  [(ngModel)]="meuPersonagem['moralidade']"></h6>
         </div>
       </div>
       <hr>
       <div class="w3-row w3-center w3-section">
         <div class="w3-col s6">
           <span><b>Dinheiro: </b><input class="w3-border-0" type="number" style="width: 60px"
-                                        [(ngModel)]="dinheiro"
-                                        (keyup)="saveChanges()"></span>
+                                        [(ngModel)]="meuPersonagem['dinheiro']"
+          ></span>
         </div>
         <div class="w3-col s6">
           <span><b>Ouro: </b><input class="w3-border-0" type="number" style="width: 60px"
-                                    [(ngModel)]="ouro"
-                                    (keyup)="saveChanges()"></span>
+                                    [(ngModel)]="meuPersonagem['ouro']"
+          ></span>
         </div>
       </div>
     </section>
@@ -201,57 +203,62 @@
       <div class="w3-row">
         <h5><b>Equipamentos</b></h5>
         <textarea name="equipamento" id="equipamento" class="w3-input" style="height: 100%" rows="6"
-                  [(ngModel)]="equipamento" (keyup)="saveChanges()"></textarea>
+                  [(ngModel)]="meuPersonagem['equipamento']"></textarea>
       </div>
     </section>
     <section class="w3-twothird w3-padding-small">
       <h5><b>Idiomas, Perícias e Conhecimentos</b></h5>
       <textarea name="conhecimentos" id="conhecimentos" class="w3-input" rows="6"
-                [(ngModel)]="conhecimentos"
-                (keyup)="saveChanges()"></textarea>
+                [(ngModel)]="meuPersonagem['conhecimentos']"
+      ></textarea>
     </section>
   </article>
   <article class="w3-panel w3-mobile">
     <h5><b>Armas</b></h5>
     <section class="w3-section w3-border-top">
-      <p class="w3-border-bottom w3-padding-small" *ngFor="let arma of armas; let i = index">- {{arma.nome}}
-        | {{arma.municao}} balas [{{arma.dano}}] | Carga: {{arma.carga}} | Custo: {{arma.custo}} | {{arma.rotulo}}</p>
+      <p class="w3-border-bottom w3-padding-small" *ngFor="let arma of armas; let i = index">{{ i }} - {{arma.nome}}
+        | {{arma.municao}} balas [{{arma.dano}}] | Carga: {{arma.carga}} | Custo: {{arma.custo}} | {{arma.rotulo}}
+        <span class="w3-red w3-tag w3-hover-gray" style="cursor: pointer" (click)="excluirArma(i)">Excluir</span>
+      </p>
     </section>
     <hr>
     <h6><b>Adicionar Arma</b></h6>
-    <form>
+    <form [formGroup]="armaForm">
       <div class="w3-cell-row ">
         <div class="w3-cell w3-padding-small w3-mobile" style="width: 50px;">
           <label for="carga">Carga</label>
-          <input name="carga" id="carga" class=" w3-input">
+          <input name="carga" id="carga" placeholder="0" class=" w3-input" formControlName="carga">
         </div>
         <div class="w3-cell w3-padding-small w3-mobile">
-          <label for="armas">Nome da Arma</label>
-          <input name="armas" id="armas" class=" w3-input">
+          <label for="arma">Nome da Arma</label>
+          <input name="arma" id="arma" placeholder="nome da arma" class=" w3-input" formControlName="arma">
         </div>
         <div class="w3-cell w3-padding-small w3-mobile" style="width: 50px;">
           <label for="ammo">Munição</label>
-          <input name="ammo" id="ammo" class=" w3-input">
+          <input name="ammo" id="ammo" placeholder="0" class=" w3-input" formControlName="ammo">
         </div>
         <div class="w3-cell w3-padding-small w3-mobile">
           <label for="dano">Dano</label>
-          <input name="dano" id="dano" class=" w3-input">
+          <input name="dano" id="dano" placeholder="2d6+1" class=" w3-input" formControlName="dano">
         </div>
         <div class="w3-cell w3-padding-small w3-mobile">
           <label for="custo">Custo</label>
-          <input name="custo" id="custo" class=" w3-input">
+          <input name="custo" id="custo" placeholder="0" class=" w3-input" formControlName="custo">
         </div>
         <div class="w3-cell w3-padding-small w3-mobile">
           <label for="rotulo">Rótulo</label>
-          <input name="rotulo" id="rotulo" class=" w3-input">
+          <input name="rotulo" id="rotulo" placeholder="Propriedades da arma" class=" w3-input"
+                 formControlName="rotulo">
         </div>
       </div>
       <div class="w3-margin-top">
-        <button class="w3-button w3-black w3-round">Adicionar</button>
+        <button class="w3-button w3-black w3-round" [ngClass]="{'w3-disabled': !armaForm.valid}" (click)="salvarArma()">
+          Adicionar
+        </button>
       </div>
     </form>
   </article>
 </main>
-<footer class="w3-dark-gray w3-panel w3-margin-bottom w3-center">
-  <p class="w3-tiny">Versão 1.0 Alpha</p>
+<footer class="w3-dark-gray w3-panel w3-margin-bottom w3-center w3-padding">
+  <p class="w3-tiny">Versão 1.1 Alpha</p>
 </footer>

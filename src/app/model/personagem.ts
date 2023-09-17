@@ -2,6 +2,7 @@ import {Arma} from "./arma";
 
 export interface Personagem {
   id?: number,
+  nome?: string,
   origem?: string,
   arquetipo?: string,
   profissao?: string,
@@ -13,18 +14,14 @@ export interface Personagem {
   sexo?: string,
   peso?: number,
   altura?: number,
-  atributos?: {
     corpo?:number,
     agilidade?:number,
     astucia?:number,
     presenca?:number,
-  },
-  salvaguardas?: {
     fortitude?:number,
     reflexos?:number,
     iniciativa?:number,
     vontade?:number,
-  },
   experiencia?: number,
   defesa?: number,
   stress?: number,
@@ -37,11 +34,9 @@ export interface Personagem {
   equipamento?: string,
   dinheiro?: number,
   ouro?: number,
-  carga?: {
     cargaLeve?:number,
     cargaMedia?:number,
     cargaPesada?:number,
     cargaMaxima?:number,
-  },
   armas?: Arma[]
 }
