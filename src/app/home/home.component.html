@@ -1,264 +1,322 @@
-<header class="w3-dark-gray w3-panel w3-margin-top">
-  <h3>Ficha de Personagem do Oeste Jurássico</h3>
+<header class="container bg-marrom text-amarelo p-3 mt-4">
+  <h2 class="text-2xl font-bold">Ficha de Personagem do Oeste Jurássico</h2>
 </header>
-<main class="w3-card-4 w3-round w3-padding w3-animate-opacity">
-  <section class="w3-panel w3-section">
-    <div class="w3-padding-small w3-cell w3-mobile">
-      <label for="nome" class="w3-block w3-bold">Nome do Personagem</label>
-      <input id="nome" type="text" class="w3-input" style="width: 18rem" [(ngModel)]="meuPersonagem.nome">
-    </div>
-  </section>
-  <section class="w3-panel w3-cell-row w3-section">
-    <div class="w3-padding-small w3-cell ">
-      <label for="origem" class="w3-block w3-bold">Origem</label>
-      <input id="origem" type="text" class="w3-input" [(ngModel)]="meuPersonagem['origem']">
-    </div>
-    <div class="w3-padding-small w3-cell ">
-      <label for="arquetipo" class="w3-block w3-bold">Arquétipo</label>
-      <input id="arquetipo" type="text" class="w3-input" [(ngModel)]="meuPersonagem['arquetipo']">
-    </div>
-    <div class="w3-padding-small w3-cell ">
-      <label for="profissao" class="w3-block w3-bold">Profissão</label>
-      <input id="profissao" type="text" class="w3-input" [(ngModel)]="meuPersonagem['profissao']">
-    </div>
-    <div class="w3-padding-small w3-cell" style="width: 100px">
-      <label for="nivel" class="w3-block w3-bold">Nivel</label>
-      <input id="nivel" type="number" class="w3-input" [(ngModel)]="meuPersonagem['nivel']">
-    </div>
-    <div class="w3-padding-small w3-cell" style="">
-      <label for="residencia" class="w3-block w3-bold">Residência</label>
-      <input id="residencia" type="text" class="w3-input" [(ngModel)]="meuPersonagem['residencia']"
-      >
-    </div>
-  </section>
-  <section class="w3-panel w3-section">
-    <div class="w3-padding-small w3-cell w3-mobile">
-      <label for="personalidade" class="w3-block w3-bold">Personalidade</label>
-      <input id="personalidade" type="text" class="w3-input" [(ngModel)]="meuPersonagem['personalidade']"
-      >
-    </div>
-    <div class="w3-padding-small w3-cell w3-mobile">
-      <label for="motivacao" class="w3-block w3-bold">Motivação</label>
-      <input id="motivacao" type="text" class="w3-input" [(ngModel)]="meuPersonagem['motivacao']">
-    </div>
-    <div class="w3-padding-small w3-cell" style="width: 100px;">
-      <label for="idade" class="w3-block w3-bold">Idade</label>
-      <input id="idade" type="number" class="w3-input" [(ngModel)]="meuPersonagem['idade']">
-    </div>
-    <div class="w3-padding-small w3-cell" style="width: 100px;">
-      <label for="sexo" class="w3-block w3-bold">Sexo</label>
-      <input id="sexo" type="text" class="w3-input" [(ngModel)]="meuPersonagem['sexo']">
-    </div>
-    <div class="w3-padding-small w3-cell" style="width: 100px;">
-      <label for="peso" class="w3-block w3-bold">Peso</label>
-      <input id="peso" type="number" class="w3-input" [(ngModel)]="meuPersonagem['peso']">
-    </div>
-    <div class="w3-padding-small w3-cell" style="width: 100px;">
-      <label for="altura" class="w3-block w3-bold">Altura</label>
-      <input id="altura" type="number" class="w3-input" [(ngModel)]="meuPersonagem['altura']">
-    </div>
-  </section>
-  <hr>
-  <article class="w3-panel w3-mobile w3-row">
-    <section class="w3-third w3-padding-small w3-section">
-      <div class="w3-row">
-        <div class="w3-col s6 m6 w3-center">
-          <h3 class=""><strong>Cor: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="meuPersonagem['corpo']">
-          </h3>
-          <span class="w3-tag">Corpo</span>
-        </div>
-        <div class="w3-col s6 m6 w3-center">
-          <h3 class=""><strong>Agi: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="meuPersonagem['agilidade']"
-          ></h3>
-          <span class="w3-tag">Agilidade</span>
-        </div>
+<main class="container border-marrom border-2 text-marrom ">
+  <article>
+    <section class="flex flex-row flex-wrap justify-start mb-2">
+      <div class="mr-2 flex-initial">
+        <label class="block font-bold" for="nome">Nome do Personagem</label>
+        <input id="nome" class="bg-pastel border-b border-vermelho" type="text" [(ngModel)]="meuPersonagem['nome']">
       </div>
-      <div class="w3-row">
-        <div class="w3-col s6 m6 w3-center">
-          <h3 class=""><strong>Ast: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="meuPersonagem['astucia']"
-          ></h3>
-          <span class="w3-tag">Astúcia</span>
-        </div>
-        <div class="w3-col s6 m6 w3-center">
-          <h3 class=""><strong>Pre: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                    [(ngModel)]="meuPersonagem['presenca']"
-          ></h3>
-          <span class="w3-tag">Presença</span>
-        </div>
-      </div>
-      <hr>
-      <div class="w3-row w3-margin-top">
-        <h5 class="w3-padding-small" style="margin: 0"><b>Salvaguardas</b></h5>
-        <div class="w3-col s6 w3-center w3-padding">
-          <p class="w3-small"><strong>Fortitude: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                                 [(ngModel)]="meuPersonagem['fortitude']"
-          >
-          </p>
-        </div>
-        <div class="w3-col s6 w3-center w3-padding">
-          <p class="w3-small"><strong>Reflexos: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                                [(ngModel)]="meuPersonagem['reflexos']"
-          >
-          </p>
-        </div>
-        <div class="w3-col s6 w3-center w3-padding">
-          <p class="w3-small"><strong>Iniciativa: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                                  [(ngModel)]="meuPersonagem['iniciativa']"
-          >
-          </p>
-        </div>
-        <div class="w3-col s6 w3-center w3-padding">
-          <p class="w3-small"><strong>Vontade: </strong><input class="w3-border-0" type="number" style="width: 50px"
-                                                               [(ngModel)]="meuPersonagem['vontade']"
-          >
-          </p>
-        </div>
+      <div class="mr-2 flex-initial">
+        <label for="nivel" class="block font-bold">Level</label>
+        <input id="nivel" type="number" class="bg-pastel border-b border-vermelho w-12"
+               [(ngModel)]="meuPersonagem['nivel']">
       </div>
     </section>
-    <section class="w3-third w3-padding-small w3-section w3-border-left w3-border-right">
-      <div class="w3-row w3-center">
-        <div class="w3-col s12">
-          <h6><b>Vigor: </b><input class="w3-border-0" type="number" style="width: 40px"
-                                   [(ngModel)]="meuPersonagem['vigor']"
-          ></h6>
-        </div>
-        <div class="w3-col s6">
-          <h6><b>Saúde: </b><input class="w3-border-0" type="number" style="width: 40px"
-                                   [(ngModel)]="meuPersonagem['saude']"
-          ></h6>
-        </div>
-        <div class="w3-col s6">
-          <h6><b>Stress: </b><input class="w3-border-0" type="number" style="width: 40px"
-                                    [value]="meuPersonagem['stress']"
-                                    [(ngModel)]="meuPersonagem['stress']"
-          ></h6>
-        </div>
+    <section class="flex flex-row flex-wrap gap-2">
+      <div class="flex-auto">
+        <label for="origem" class="block font-bold">Origem</label>
+        <input id="origem" type="text" class="bg-pastel border-b border-vermelho" [(ngModel)]="meuPersonagem['origem']">
       </div>
-      <div class="w3-row w3-center">
-        <div class="w3-col s6">
-          <h6><strong>Defesa: </strong><input class="w3-border-0" type="number" style="width: 40px"
-                                              [(ngModel)]="meuPersonagem['defesa']"></h6>
-        </div>
-        <div class="w3-col s6">
-          <h6><strong>Proficiência: </strong><input class="w3-border-0" type="number" style="width: 40px"
-                                                    [(ngModel)]="meuPersonagem['proficiencia']">
-          </h6>
-        </div>
+      <div class="flex-auto">
+        <label for="arquetipo" class="block font-bold">Arquétipo</label>
+        <input id="arquetipo" type="text" class="bg-pastel border-b border-vermelho"
+               [(ngModel)]="meuPersonagem['arquetipo']">
       </div>
-      <hr>
-      <div class="w3-row w3-center">
-        <h6 class="w3-left-align w3-container"><b>Carga</b>
-          (Total: {{ (meuPersonagem['cargaLeve']! + meuPersonagem['cargaMedia']! + meuPersonagem['cargaPesada']! + meuPersonagem['cargaMaxima']!) || 0}}
-          )</h6>
-        <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="meuPersonagem['cargaLeve']"
-        ><span class="">Leve</span></div>
-        <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="meuPersonagem['cargaMedia']"
-        ><span class="">Média</span></div>
-        <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="meuPersonagem['cargaPesada']"
-        ><span class="">Pesada</span></div>
-        <div class="w3-col s3 w3-padding-small"><input class="w3-input" type="number"
-                                                       [(ngModel)]="meuPersonagem['cargaMaxima']"
-        ><span class="">Máxima</span></div>
+      <div class="flex-auto">
+        <label for="profissao" class="block font-bold">Profissão</label>
+        <input id="profissao" type="text" class="bg-pastel border-b border-vermelho"
+               [(ngModel)]="meuPersonagem['profissao']">
+      </div>
+      <div class="flex-auto">
+        <label for="residencia" class="block font-bold">Residência</label>
+        <input id="residencia" type="text" class="bg-pastel border-b border-vermelho"
+               [(ngModel)]="meuPersonagem['residencia']">
+      </div>
+      <div class="flex-auto">
+        <label for="personalidade" class="block font-bold">Personalidade</label>
+        <input id="personalidade" type="text" class="bg-pastel border-b border-vermelho"
+               [(ngModel)]="meuPersonagem['personalidade']">
+      </div>
+      <div class="flex-auto">
+        <label for="motivacao" class="block font-bold">Motivação</label>
+        <input id="motivacao" type="text" class="bg-pastel border-b border-vermelho"
+               [(ngModel)]="meuPersonagem['motivacao']">
+      </div>
+      <div class="flex-auto">
+        <label for="idade" class="block font-bold">Idade</label>
+        <input id="idade" type="number" class="bg-pastel border-b border-vermelho  m:w-1/4"
+               [(ngModel)]="meuPersonagem['idade']">
+      </div>
+      <div class="flex-auto">
+        <label for="sexo" class="block font-bold">Sexo</label>
+        <input id="sexo" type="text" class="bg-pastel border-b border-vermelho  m:w-1/4"
+               [(ngModel)]="meuPersonagem['sexo']">
+      </div>
+      <div class="flex-auto">
+        <label for="peso" class="block font-bold">Peso</label>
+        <input id="peso" type="number" class="bg-pastel border-b border-vermelho  m:w-1/4"
+               [(ngModel)]="meuPersonagem['peso']">
+      </div>
+      <div class="flex-auto">
+        <label for="altura" class="block font-bold">Altura</label>
+        <input id="altura" type="number" class="bg-pastel border-b border-vermelho  m:w-1/4"
+               [(ngModel)]="meuPersonagem['altura']">
       </div>
     </section>
-    <section class="w3-third w3-padding-small w3-section">
-      <div class="w3-row">
-        <div class="w3-col s4 m12 w3-center">
-          <h6><strong>Experiência: </strong><input class="w3-border-0" type="number" style="width: 60px"
-                                                   [(ngModel)]="meuPersonagem['experiencia']"></h6>
+  </article>
+  <hr class="my-6 text-vermelho">
+  <article>
+    <section class="flex flex-row flex-wrap justify-between">
+
+      <div class="flex-initial w-full md:w-1/3 p-1 md:p-2">
+        <div class="flex flex-row justify-center">
+          <div class="p-2 text-center">
+            <h3 class="font-bold inline">Cor: </h3>
+            <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                   [(ngModel)]="meuPersonagem['corpo']">
+            <span class="block text-center">Corpo</span>
+          </div>
+          <div class="p-2 text-center">
+            <h3 class="font-bold inline">Agi: </h3>
+            <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                   [(ngModel)]="meuPersonagem['agilidade']">
+            <span class="block text-center">Agilidade</span>
+          </div>
         </div>
-        <div class="w3-col s4 m12 w3-center">
-          <h6><strong>Determinação: </strong><input class="w3-border-0" type="number" style="width: 60px"
-                                                    [(ngModel)]="meuPersonagem['determinacao']">
-          </h6>
+        <div class="flex flex-row justify-center">
+          <div class="p-2 text-center">
+            <h3 class="font-bold inline">Ast: </h3>
+            <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                   [(ngModel)]="meuPersonagem['astucia']">
+            <span class="block text-center">Astúcia</span>
+          </div>
+          <div class="p-2 text-center">
+            <h3 class="font-bold inline">Pre: </h3>
+            <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                   [(ngModel)]="meuPersonagem['presenca']">
+            <span class="block text-center">Presença</span>
+          </div>
         </div>
-        <div class="w3-col s4 m12 w3-center">
-          <h6><strong>Moralidade: </strong><input class="w3-border-0" type="number" style="width: 60px"
-                                                  [(ngModel)]="meuPersonagem['moralidade']"></h6>
+
+        <hr class="text-vermelho my-2">
+
+        <div class="mx-4 p-2">
+          <h5 class="font-bold text-lg">Salvaguardas</h5>
+          <div class="md:flex flex-row justify-center">
+            <div class="p-2 text-center">
+              <h4 class="font-bold inline">Fortitude </h4>
+              <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                     [(ngModel)]="meuPersonagem['fortitude']">
+            </div>
+            <div class="p-2 text-center">
+              <h4 class="font-bold inline">Reflexos </h4>
+              <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                     [(ngModel)]="meuPersonagem['reflexos']">
+            </div>
+            <div class="p-2 text-center">
+              <h4 class="font-bold inline">Iniciativa </h4>
+              <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                     [(ngModel)]="meuPersonagem['iniciativa']">
+            </div>
+            <div class="p-2 text-center">
+              <h4 class="font-bold inline">Vontade </h4>
+              <input type="number" class="inline bg-pastel border-b border-vermelho w-12"
+                     [(ngModel)]="meuPersonagem['vontade']">
+            </div>
+          </div>
         </div>
       </div>
-      <hr>
-      <div class="w3-row w3-center w3-section">
-        <div class="w3-col s6">
-          <span><b>Dinheiro: </b><input class="w3-border-0" type="number" style="width: 60px"
-                                        [(ngModel)]="meuPersonagem['dinheiro']"
-          ></span>
+      <div class="flex-initial w-full md:w-1/3 p-1 md:p-2 md:border-x text-center">
+        <hr class="text-vermelho my-2 md:hidden">
+        <div class="w-full inline-block mt-3">
+          <h6 class="font-bold">Vigor:
+            <input class="inline bg-pastel border-b border-vermelho font-normal w-12"
+                   type="number"
+                   [(ngModel)]="meuPersonagem['vigor']">
+          </h6>
         </div>
-        <div class="w3-col s6">
-          <span><b>Ouro: </b><input class="w3-border-0" type="number" style="width: 60px"
-                                    [(ngModel)]="meuPersonagem['ouro']"
-          ></span>
+        <div class="w-full md:w-48 inline-block mt-3">
+          <h6 class="font-bold">Saúde:
+            <input class="inline bg-pastel border-b border-vermelho font-normal w-12"
+                   type="number"
+                   [(ngModel)]="meuPersonagem['saude']">
+          </h6>
+        </div>
+        <div class="w-full md:w-48 inline-block mt-3">
+          <h6 class="font-bold">Stress:
+            <input class="inline bg-pastel border-b border-vermelho font-normal w-12"
+                   type="number"
+                   [(ngModel)]="meuPersonagem['stress']">
+          </h6>
+        </div>
+        <div class="w-full md:w-48 inline-block mt-3">
+          <h6 class="font-bold">Defesa:
+            <input class="inline bg-pastel border-b border-vermelho font-normal w-12"
+                   type="number"
+                   [(ngModel)]="meuPersonagem['defesa']">
+          </h6>
+        </div>
+        <div class="w-full md:w-48 inline-block mt-3">
+          <h6 class="font-bold">Proficiência:
+            <input class="inline bg-pastel border-b border-vermelho font-normal w-12"
+                   type="number"
+                   [(ngModel)]="meuPersonagem['proficiencia']">
+          </h6>
+        </div>
+        <hr class="text-vermelho my-4">
+        <div class="">
+          <h6 class="w-full text-left mx-4 md:px-10 mb-2">
+            <strong>Carga </strong>(Total: {{
+            (meuPersonagem['cargaLeve']! +
+              meuPersonagem['cargaMedia']! +
+              meuPersonagem['cargaPesada']! +
+              meuPersonagem['cargaMaxima']!) || 0}})</h6>
+          <div class="flex flex-row flex-nowrap justify-between md:px-10">
+            <div class="w-48 md:inline-block">
+              <input class="inline bg-pastel border-b border-vermelho font-normal w-14"
+                     type="number"
+                     [(ngModel)]="meuPersonagem['cargaLeve']">
+              <p class="text-sm font-bold">Leve</p>
+            </div>
+            <div class="w-48 md:inline-block">
+              <input class="inline bg-pastel border-b border-vermelho font-normal w-14"
+                     type="number"
+                     [(ngModel)]="meuPersonagem['cargaMedia']">
+              <p class="text-sm font-bold">Média</p>
+            </div>
+            <div class="w-48 md:inline-block">
+              <input class="inline bg-pastel border-b border-vermelho font-normal w-14"
+                     type="number"
+                     [(ngModel)]="meuPersonagem['cargaPesada']">
+              <p class="text-sm font-bold">Pesada</p>
+            </div>
+            <div class="w-48 md:inline-block">
+              <input class="inline bg-pastel border-b border-vermelho font-normal w-14"
+                     type="number"
+                     [(ngModel)]="meuPersonagem['cargaMaxima']">
+              <p class="text-sm font-bold">Máxima</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-initial w-full md:w-1/3 p-1 md:p-2 text-center">
+        <hr class="text-vermelho my-2 md:hidden">
+        <div class="text-center">
+          <div class="mb-1.5">
+            <h6><strong>Experiência: </strong>
+              <input class=" bg-pastel border-b border-vermelho font-normal w-16"
+                     type="number"
+                     [(ngModel)]="meuPersonagem['experiencia']">
+            </h6>
+          </div>
+          <div class="mb-1.5">
+            <h6><strong>Determinação: </strong>
+              <input class=" bg-pastel border-b border-vermelho font-normal w-16"
+                     type="number"
+                     [(ngModel)]="meuPersonagem['determinacao']">
+            </h6>
+          </div>
+          <div class="mb-1.5">
+            <h6><strong>Moralidade: </strong>
+              <input class=" bg-pastel border-b border-vermelho font-normal w-16"
+                     type="number"
+                     [(ngModel)]="meuPersonagem['moralidade']">
+            </h6>
+          </div>
+        </div>
+        <hr class="text-vermelho my-4">
+        <div class="text-center">
+          <p class="mb-1.5">
+            <b>$$$: </b>
+            <input class="bg-pastel border-b border-vermelho font-normal w-16"
+                   type="number"
+                   [(ngModel)]="meuPersonagem['dinheiro']">
+          </p>
+          <p class="mb-1.5">
+            <b>Ouro: </b>
+            <input class="bg-pastel border-b border-vermelho font-normal w-16"
+                   type="number"
+                   [(ngModel)]="meuPersonagem['ouro']">
+          </p>
         </div>
       </div>
     </section>
   </article>
-  <article class="w3-panel w3-mobile w3-row">
-    <section class="w3-third w3-padding-small">
-      <div class="w3-row">
-        <h5><b>Equipamentos</b></h5>
-        <textarea name="equipamento" id="equipamento" class="w3-input" style="height: 100%" rows="6"
+  <article>
+    <div class="flex flex-row flex-wrap justify-start">
+      <div class="w-full md:w-1/3 flex-initial p-2">
+        <h5 class="mb-2"><b>Equipamentos</b></h5>
+        <textarea name="equipamento" id="equipamento" class="bg-white w-full border border-vermelho font-normal"
+                  rows="8"
                   [(ngModel)]="meuPersonagem['equipamento']"></textarea>
+
       </div>
-    </section>
-    <section class="w3-twothird w3-padding-small">
-      <h5><b>Idiomas, Perícias e Conhecimentos</b></h5>
-      <textarea name="conhecimentos" id="conhecimentos" class="w3-input" rows="6"
-                [(ngModel)]="meuPersonagem['conhecimentos']"
-      ></textarea>
-    </section>
+      <div class="w-full md:w-2/3 flex-initial p-2">
+        <h5 class="mb-2"><b>Idiomas, Perícias e Conhecimentos</b></h5>
+        <textarea name="conhecimentos" id="conhecimentos" class="bg-white w-full border border-vermelho font-normal"
+                  rows="8"
+                  [(ngModel)]="meuPersonagem['conhecimentos']"
+        ></textarea>
+      </div>
+    </div>
   </article>
-  <article class="w3-panel w3-mobile">
+  <article class="mb-4">
     <h5><b>Armas</b></h5>
-    <section class="w3-section w3-border-top">
-      <p class="w3-border-bottom w3-padding-small" *ngFor="let arma of armas; let i = index">{{ i }} - {{arma.nome}}
-        | {{arma.municao}} balas [{{arma.dano}}] | Carga: {{arma.carga}} | Custo: {{arma.custo}} | {{arma.rotulo}}
-        <span class="w3-red w3-tag w3-hover-gray" style="cursor: pointer" (click)="excluirArma(i)">Excluir</span>
+    <section class="p-2 border-y mb-4">
+      <p class="py-1.5" *ngFor="let arma of armas; let i = index">
+        {{arma.nome}} | {{arma.municao}} balas [{{arma.dano}}] | Carga: {{arma.carga}} | Custo: {{arma.custo}}
+        | {{arma.rotulo}}
+        <span class="bg-vermelho rounded text-[#fff] p-1 float-right hover:bg-marrom"
+              (click)="excluirArma(i)">Excluir</span>
       </p>
     </section>
-    <hr>
-    <h6><b>Adicionar Arma</b></h6>
     <form [formGroup]="armaForm">
-      <div class="w3-cell-row ">
-        <div class="w3-cell w3-padding-small w3-mobile" style="width: 50px;">
-          <label for="carga">Carga</label>
-          <input name="carga" id="carga" placeholder="0" class=" w3-input" formControlName="carga">
+      <div class="p-4 relative mb-4">
+        <h6 class="font-bold mb-2 absolute left-0">Adicionar Arma</h6>
+        <button class="bg-vermelho rounded text-[#fff] py-2 px-3 hover:bg-marrom absolute right-0"
+                [ngClass]="{'cursor-not-allowed': !armaForm.valid}" (click)="armaForm.valid && salvarArma()">
+          &plus;
+        </button>
+      </div>
+      <div class="md:flex md:flex-row md:flex-nowrap md:justify-start md:px-8 md:gap-x-4">
+        <div class="w-full md:flex-initial md:w-16">
+          <label class="font-bold md:block" for="carga">Carga </label>
+          <input class="bg-pastel border-b border-vermelho font-normal w-full " name="carga" id="carga" type="number"
+                 placeholder="0" formControlName="carga">
         </div>
-        <div class="w3-cell w3-padding-small w3-mobile">
-          <label for="arma">Nome da Arma</label>
-          <input name="arma" id="arma" placeholder="nome da arma" class=" w3-input" formControlName="arma">
+        <div class="w-full md:flex-initial md:w-48">
+          <label class="font-bold md:block" for="arma">Nome da Arma </label>
+          <input class="bg-pastel border-b border-vermelho font-normal w-full " name="arma" id="arma" type="text"
+                 placeholder="nome da arma" formControlName="arma">
         </div>
-        <div class="w3-cell w3-padding-small w3-mobile" style="width: 50px;">
-          <label for="ammo">Munição</label>
-          <input name="ammo" id="ammo" placeholder="0" class=" w3-input" formControlName="ammo">
+        <div class="w-full md:flex-initial md:w-16">
+          <label class="font-bold md:block" for="ammo">Munição </label>
+          <input class="bg-pastel border-b border-vermelho font-normal w-full " name="ammo" id="ammo" type="number"
+                 placeholder="0" formControlName="ammo">
         </div>
-        <div class="w3-cell w3-padding-small w3-mobile">
-          <label for="dano">Dano</label>
-          <input name="dano" id="dano" placeholder="2d6+1" class=" w3-input" formControlName="dano">
+        <div class="w-full md:flex-initial md:w-16">
+          <label class="font-bold md:block" for="dano">Dano </label>
+          <input class="bg-pastel border-b border-vermelho font-normal w-full " name="dano" id="dano" type="text"
+                 placeholder="2d6+1" formControlName="dano">
         </div>
-        <div class="w3-cell w3-padding-small w3-mobile">
-          <label for="custo">Custo</label>
-          <input name="custo" id="custo" placeholder="0" class=" w3-input" formControlName="custo">
+        <div class="w-full md:flex-initial md:w-16">
+          <label class="font-bold md:block" for="custo">Custo </label>
+          <input class="bg-pastel border-b border-vermelho font-normal w-full " name="custo" id="custo" type="number"
+                 placeholder="0" formControlName="custo">
         </div>
-        <div class="w3-cell w3-padding-small w3-mobile">
-          <label for="rotulo">Rótulo</label>
-          <input name="rotulo" id="rotulo" placeholder="Propriedades da arma" class=" w3-input"
+        <div class="w-full md:flex-initial md:w-48">
+          <label class="font-bold md:block" for="rotulo">Rótulo </label>
+          <input class="bg-pastel border-b border-vermelho font-normal w-full " name="rotulo" id="rotulo" type="text"
+                 placeholder="Propriedades da arma"
                  formControlName="rotulo">
         </div>
-      </div>
-      <div class="w3-margin-top">
-        <button class="w3-button w3-black w3-round" [ngClass]="{'w3-disabled': !armaForm.valid}" (click)="salvarArma()">
-          Adicionar
-        </button>
       </div>
     </form>
   </article>
 </main>
-<footer class="w3-dark-gray w3-panel w3-margin-bottom w3-center w3-padding">
-  <p class="w3-tiny">Versão 1.1 Alpha</p>
+<footer class="container bg-marrom text-amarelo p-3 mb-4">
+  <p class="text-center text-xs">Versão 1.1 Alpha</p>
 </footer>

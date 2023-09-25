@@ -56,13 +56,12 @@ export class HomeComponent {
       armas: []
     }
     this.armaForm = new FormGroup({
-      "id": new FormControl(null),
-      "carga": new FormControl(0,),
-      "arma": new FormControl(null),
-      "ammo": new FormControl(0),
-      "dano": new FormControl(null),
-      "custo": new FormControl(0),
-      "rotulo": new FormControl(null),
+      "carga": new FormControl(0,[Validators.nullValidator, Validators.min(0)]),
+      "arma": new FormControl(null, [Validators.nullValidator, Validators.required],),
+      "ammo": new FormControl(0, [Validators.nullValidator, Validators.min(0)]),
+      "dano": new FormControl(null, [Validators.nullValidator, Validators.required]),
+      "custo": new FormControl(0, [Validators.nullValidator, Validators.min(0)]),
+      "rotulo": new FormControl(null, [Validators.nullValidator, Validators.required]),
     })
   }
 
@@ -80,19 +79,23 @@ export class HomeComponent {
   }
 
   salvarArma() {
-    this.meuPersonagem.armas!.push({
-      carga: this.armaForm.value.carga,
-      nome: this.armaForm.value.arma,
-      municao: this.armaForm.value.ammo,
-      dano: this.armaForm.value.dano,
-      custo: this.armaForm.value.custo,
-      rotulo: this.armaForm.value.rotulo,
-    })
-    this.armas = this.meuPersonagem.armas!
+    if(this.armaForm.valid){
+      this.meuPersonagem.armas!.push({
+        carga: this.armaForm.value.carga,
+        nome: this.armaForm.value.arma,
+        municao: this.armaForm.value.ammo,
+        dano: this.armaForm.value.dano,
+        custo: this.armaForm.value.custo,
+        rotulo: this.armaForm.value.rotulo,
+      })
+      this.armas = this.meuPersonagem.armas!
+      // this.armaForm.reset()
+    }
   }
 
   excluirArma(id: number){
-    this.meuPersonagem.armas?.splice(id, 1)
+    if(confirm("Tem certeza que deseja excluir esta arma?"))
+      this.meuPersonagem.armas?.splice(id, 1)
   }
 }
 
