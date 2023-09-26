@@ -11,7 +11,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 export class HomeComponent {
   meuPersonagem: Personagem;
-  armas: Arma[] = []
 
   armaForm: FormGroup
 
@@ -39,6 +38,7 @@ export class HomeComponent {
       moralidade: 0,
       conhecimentos: "",
       equipamento: "",
+      municaoTotal: 0,
       dinheiro: 0,
       ouro: 0,
       corpo: 0,
@@ -55,47 +55,19 @@ export class HomeComponent {
       cargaMaxima: 0,
       armas: []
     }
-    this.armaForm = new FormGroup({
-      "carga": new FormControl(0,[Validators.nullValidator, Validators.min(0)]),
-      "arma": new FormControl(null, [Validators.nullValidator, Validators.required],),
-      "ammo": new FormControl(0, [Validators.nullValidator, Validators.min(0)]),
-      "dano": new FormControl(null, [Validators.nullValidator, Validators.required]),
-      "custo": new FormControl(0, [Validators.nullValidator, Validators.min(0)]),
-      "rotulo": new FormControl(null, [Validators.nullValidator, Validators.required]),
-    })
+
   }
 
   ngOnInit() {
     let personagemGuardado = JSON.parse(localStorage.getItem("personagem") || '{}')
 
     this.meuPersonagem = Object.assign(this.meuPersonagem, personagemGuardado)
-    if (personagemGuardado.armas){
-      this.armas = personagemGuardado.armas
-    }
   }
 
   ngDoCheck() {
     localStorage.setItem("personagem", JSON.stringify(this.meuPersonagem))
   }
 
-  salvarArma() {
-    if(this.armaForm.valid){
-      this.meuPersonagem.armas!.push({
-        carga: this.armaForm.value.carga,
-        nome: this.armaForm.value.arma,
-        municao: this.armaForm.value.ammo,
-        dano: this.armaForm.value.dano,
-        custo: this.armaForm.value.custo,
-        rotulo: this.armaForm.value.rotulo,
-      })
-      this.armas = this.meuPersonagem.armas!
-      // this.armaForm.reset()
-    }
-  }
 
-  excluirArma(id: number){
-    if(confirm("Tem certeza que deseja excluir esta arma?"))
-      this.meuPersonagem.armas?.splice(id, 1)
-  }
 }
 

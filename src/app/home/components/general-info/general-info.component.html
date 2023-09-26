@@ -1,0 +1,64 @@
+<article>
+  <section class="flex flex-row flex-wrap justify-start mb-2">
+    <div class="mr-2 flex-initial">
+      <label class="block font-bold" for="nome">Nome do Personagem</label>
+      <input id="nome" class="bg-pastel border-b border-vermelho" type="text" [(ngModel)]="meuPersonagem['nome']">
+    </div>
+    <div class="mr-2 flex-initial">
+      <label for="nivel" class="block font-bold">Level</label>
+      <input id="nivel" type="number" class="bg-pastel border-b border-vermelho w-12"
+             [(ngModel)]="meuPersonagem['nivel']">
+    </div>
+  </section>
+  <section class="flex flex-row flex-wrap gap-2">
+    <div class="flex-auto">
+      <label for="origem" class="block font-bold">Origem</label>
+      <input id="origem" type="text" class="bg-pastel border-b border-vermelho" [(ngModel)]="meuPersonagem['origem']">
+    </div>
+    <div class="flex-auto">
+      <label for="arquetipo" class="block font-bold">Arquétipo</label>
+      <input id="arquetipo" type="text" class="bg-pastel border-b border-vermelho"
+             [(ngModel)]="meuPersonagem['arquetipo']">
+    </div>
+    <div class="flex-auto">
+      <label for="profissao" class="block font-bold">Profissão</label>
+      <input id="profissao" type="text" class="bg-pastel border-b border-vermelho"
+             [(ngModel)]="meuPersonagem['profissao']">
+    </div>
+    <div class="flex-auto">
+      <label for="residencia" class="block font-bold">Residência</label>
+      <input id="residencia" type="text" class="bg-pastel border-b border-vermelho"
+             [(ngModel)]="meuPersonagem['residencia']">
+    </div>
+    <div class="flex-auto">
+      <label for="personalidade" class="block font-bold">Personalidade</label>
+      <input id="personalidade" type="text" class="bg-pastel border-b border-vermelho"
+             [(ngModel)]="meuPersonagem['personalidade']">
+    </div>
+    <div class="flex-auto">
+      <label for="motivacao" class="block font-bold">Motivação</label>
+      <input id="motivacao" type="text" class="bg-pastel border-b border-vermelho"
+             [(ngModel)]="meuPersonagem['motivacao']">
+    </div>
+    <div class="flex-auto">
+      <label for="idade" class="block font-bold">Idade</label>
+      <input id="idade" type="number" class="bg-pastel border-b border-vermelho  m:w-1/4"
+             [(ngModel)]="meuPersonagem['idade']">
+    </div>
+    <div class="flex-auto">
+      <label for="sexo" class="block font-bold">Sexo</label>
+      <input id="sexo" type="text" class="bg-pastel border-b border-vermelho  m:w-1/4"
+             [(ngModel)]="meuPersonagem['sexo']">
+    </div>
+    <div class="flex-auto">
+      <label for="peso" class="block font-bold">Peso</label>
+      <input id="peso" type="number" class="bg-pastel border-b border-vermelho  m:w-1/4"
+             [(ngModel)]="meuPersonagem['peso']">
+    </div>
+    <div class="flex-auto">
+      <label for="altura" class="block font-bold">Altura</label>
+      <input id="altura" type="number" class="bg-pastel border-b border-vermelho  m:w-1/4"
+             [(ngModel)]="meuPersonagem['altura']">
+    </div>
+  </section>
+</article>

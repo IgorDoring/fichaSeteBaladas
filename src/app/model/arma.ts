@@ -4,6 +4,7 @@ export interface Arma{
   municao: number,
   custo: number
   dano: string,
-  carga: number
-  rotulo: string
+  carga: number,
+  rotulo: string,
+  tiro: number
 }

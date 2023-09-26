@@ -1,0 +1,72 @@
+<article class="p-2 mb-4">
+  <h1 class="text-lg font-bold">Armas </h1>
+  <span class="inline-block mb-3">
+      Munição Total:
+    <input id="municaoTotal"
+           type="number"
+           class="bg-pastel rounded border-b border-vermelho w-12"
+           [(ngModel)]="meuPersonagem['municaoTotal']">
+  </span>
+  <section class="p-1.5 mb-4 md:border-x md:border-vermelho">
+    <ng-container *ngFor="let arma of meuPersonagem['armas']; let i = index">
+      <div class="flex justify-between p-1">
+        <p class="w-full md:w-1/2">{{arma.nome}} | {{(arma.municao - arma.tiro!)}} balas [{{arma.dano}}] | Carga: {{arma.carga}} | Custo: {{arma.custo}}
+          | {{arma.rotulo}}</p>
+        <div class="float-right">
+          <span class="bg-preto rounded text-[#fff] p-0.5 hover:bg-amarelo cursor-pointer"
+                (click)="atirarArma(i)">Atirar</span>
+          <span class="bg-marrom rounded text-[#fff] p-0.5 mx-1 hover:bg-amarelo cursor-pointer"
+                (click)="recarregarArma(i)">Recarregar</span>
+          <span class="bg-vermelho rounded text-[#fff] p-0.5 hover:bg-amarelo cursor-pointer"
+                (click)="excluirArma(i)">Excluir</span>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+  <form [formGroup]="armaForm">
+    <div class="p-4 relative mb-4">
+      <h6 class="font-bold mb-2 absolute left-0">Adicionar Arma</h6>
+      <button class="bg-vermelho rounded text-[#fff] py-2 px-3 hover:bg-marrom absolute right-0"
+              [ngClass]="{'cursor-not-allowed': !armaForm.valid}" (click)="armaForm.valid && salvarArma()">
+        &plus;
+      </button>
+    </div>
+    <div class="md:flex md:justify-start md:px-8 md:gap-x-4">
+      <div class="w-full md:flex-initial md:w-48">
+        <label class="font-bold md:block" for="arma">Nome da Arma </label>
+        <input class="bg-pastel rounded border-b border-vermelho font-normal w-full " name="arma" id="arma" type="text"
+               placeholder="nome da arma" formControlName="arma">
+      </div>
+      <div class="w-full md:flex-initial md:w-16">
+        <label class="font-bold md:block" for="ammo">Munição </label>
+        <input class="bg-pastel rounded border-b border-vermelho font-normal w-full " name="ammo" id="ammo"
+               type="number"
+               placeholder="0" formControlName="ammo">
+      </div>
+      <div class="w-full md:flex-initial md:w-16">
+        <label class="font-bold md:block" for="dano">Dano </label>
+        <input class="bg-pastel rounded border-b border-vermelho font-normal w-full " name="dano" id="dano" type="text"
+               placeholder="2d6+1" formControlName="dano">
+      </div>
+      <div class="w-full md:flex-initial md:w-16">
+        <label class="font-bold md:block" for="carga">Carga </label>
+        <input class="bg-pastel rounded border-b border-vermelho font-normal w-full " name="carga" id="carga"
+               type="number"
+               placeholder="0" formControlName="carga">
+      </div>
+      <div class="w-full md:flex-initial md:w-16">
+        <label class="font-bold md:block" for="custo">Custo </label>
+        <input class="bg-pastel rounded border-b border-vermelho font-normal w-full " name="custo" id="custo"
+               type="number"
+               placeholder="0" formControlName="custo">
+      </div>
+      <div class="w-full md:flex-initial md:w-48">
+        <label class="font-bold md:block" for="rotulo">Rótulo </label>
+        <input class="bg-pastel rounded border-b border-vermelho font-normal w-full " name="rotulo" id="rotulo"
+               type="text"
+               placeholder="Propriedades da arma"
+               formControlName="rotulo">
+      </div>
+    </div>
+  </form>
+</article>
