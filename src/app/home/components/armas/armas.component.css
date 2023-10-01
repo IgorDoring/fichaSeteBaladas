@@ -1,0 +1,15 @@
+th, td{
+  @apply p-1
+}
+
+th{
+  @apply bg-marrom-700 text-white border border-marrom-700
+}
+
+th:not(th:last-child), th:first-child{
+  @apply border-x border-marrom-600
+}
+
+td{
+  @apply border-marrom-700 border bg-marrom-300
+}
