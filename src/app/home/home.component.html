@@ -1,10 +1,10 @@
-<app-header></app-header>
-<main class="container border-marrom border-2 text-marrom ">
+<main class="border-marrom border-2 text-marrom container mx-auto sm:my-4">
+  <app-header></app-header>
   <app-general-info [meuPersonagem]="meuPersonagem"></app-general-info>
-  <hr class="my-6 text-vermelho">
+  <hr class="my-6 border-vermelho">
   <app-atributos [meuPersonagem]="meuPersonagem"></app-atributos>
-  <hr class="my-6 text-vermelho">
+  <hr class="my-6 border-vermelho">
   <app-equipamento [meuPersonagem]="meuPersonagem"></app-equipamento>
   <app-armas [meuPersonagem]="meuPersonagem"></app-armas>
+  <app-footer></app-footer>
 </main>
-<app-footer></app-footer>

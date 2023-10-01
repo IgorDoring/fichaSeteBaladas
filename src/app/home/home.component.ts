@@ -11,7 +11,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 export class HomeComponent {
   meuPersonagem: Personagem;
-
   armaForm: FormGroup
 
   constructor() {
